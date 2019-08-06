@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "esnext",
+		"module": "esnext",
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+		"preserveConstEnums": true,
+		"outDir": "./dist",
+		"declaration": true,
+		"skipLibCheck": true,
+		"listEmittedFiles": true,
+		"declarationDir": "./dist/types",
+		"baseUrl": "./src",
+    "lib": ["es2015", "es2016", "es2017", "esnext"]
+	},
+	"include": ["./src/**/*", "./src/global.d.ts"],
+  "exclude": ["dist", "__tests__", "node_modules"]
+}

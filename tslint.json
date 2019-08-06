@@ -1,0 +1,25 @@
+{
+	"rulesDirectory": ["tslint-plugin-prettier"],
+	"extends": ["tslint:latest", "tslint-config-airbnb", "tslint-config-prettier"],
+	"rules": {
+		"array-type": [true, "array"],
+		"curly": [true, "as-needed"],
+		"function-name": false,
+		"import-name": false,
+		"interface-over-type-literal": false,
+		"js-no-lambda": false,
+		"no-boolean-literal-compare": false,
+		"no-shadowed-variable": false,
+		"no-unused-expression": [true, "allow-fast-null-checks"],
+		"object-literal-sort-keys": false,
+		"ordered-imports": false,
+		"prettier": true,
+		"space-before-function-paren": [true, { "anonymous": "never", "named": "always", "asyncArrow": "never" }],
+		"variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
+	},
+	"exclude": [
+		"node_modules",
+		".cache/**/*",
+		"public/**/*"
+	]
+}
