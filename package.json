@@ -1,11 +1,13 @@
 {
   "name": "tailwindcss-shortcuts",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Generate tailwind class names by js function",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "rm -r ./dist; rollup -c",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+		"copypackage": "cp -rf package.json dist; cp -rf package-lock.json dist; cp -rf README.md dist; cp -rf tsconfig.json dist",
+		"dist": "npm run copypackage; cd dist; npm publish"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -22,10 +24,6 @@
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.3"
   },
-  "files": [
-    "dist",
-    "tsconfig.json"
-  ],
   "author": "Knovour",
   "license": "MIT"
 }

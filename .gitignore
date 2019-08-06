@@ -71,3 +71,8 @@ yarn-error.log
 
 
 .rpt2_cache
+
+dist/package.json
+dist/package-lock.json
+dist/tsconfig.json
+dist/README.md
