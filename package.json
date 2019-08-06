@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-shortcuts",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Generate tailwind class names by js function",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,11 @@
     "tslint-loader": "^3.5.4",
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.3"
-  },
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Knovour/tailwindcss-shortcuts"
+	},
   "author": "Knovour",
   "license": "MIT"
 }
