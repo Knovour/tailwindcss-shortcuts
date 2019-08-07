@@ -20,5 +20,5 @@ export default {
 		chunkFileNames: '_helpers.js',
 		entryFileNames: '[name].js',
 	},
-	plugins: [typescript({ clean: true, useTsconfigDeclarationDir: true })],
+	plugins: [typescript({ clean: true })],
 }
