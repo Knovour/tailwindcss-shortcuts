@@ -1,10 +1,12 @@
+import { Currying } from './_utils/types'
+
 const addPrefix = (prefix: string, classes: string[]): string =>
 	`${prefix}:${classes.join(' ').replace(/\s([a-zA-Z])/g, ` ${prefix}:$1`)}`
 
 export const screen = (
 	media: string,
 	...classes: string[]
-): string | ((...classes: string[]) => string) =>
+): string | Currying =>
 	classes.length
 		? addPrefix(media, classes)
 		: (...classes: string[]) => addPrefix(media, classes)
@@ -27,7 +29,7 @@ const generate = (status: Status, classes: string[]) =>
 export const status = (
 	status: Status,
 	...classes: string[]
-): string | ((...classes: string[]) => string) =>
+): string | Currying =>
 	classes.length
 		? generate(status, classes)
 		: (...classes: string[]) => generate(status, classes)

@@ -1,10 +1,10 @@
 import { create, format, toClassList } from './_utils/helpers'
-import { Argument } from './_utils/types'
+import { Argument, Currying } from './_utils/types'
 
 export const custom = (
 	className: string = '',
 	...args: Argument[]
-): string | ((...args: Argument[]) => string) =>
+): string | Currying =>
 	args.length
 		? format(toClassList(create(className), args))
 		: (...args: Argument[]) => format(toClassList(create(className), args))
