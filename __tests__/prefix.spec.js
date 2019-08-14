@@ -1,4 +1,4 @@
-import { screen, status } from '../dist/prefix'
+import { screen, status, child } from '../dist/prefix'
 import { rounded } from '../dist/borders'
 import { size } from '../dist/sizing'
 
@@ -25,19 +25,9 @@ describe('status classes', () => {
 		expect(status('focus', 'mx-3', 'text-xl')).toBe('focus:mx-3 focus:text-xl')
 	})
 
-	test('with class alias usage', () =>
-		expect(status('all', 'mx-3', 'text-xl')).toBe(
-			'hover:mx-3 hover:text-xl focus:mx-3 focus:text-xl active:mx-3 active:text-xl group-hover:mx-3 group-hover:text-xl focus-within:mx-3 focus-within:text-xl'
-		))
-
 	test('with currying', () => {
 		const hover = status('hover')
 		expect(hover('mx-3', 'text-xl')).toBe('hover:mx-3 hover:text-xl')
-
-		const all = status('all')
-		expect(all('mx-3', 'text-xl')).toBe(
-			'hover:mx-3 hover:text-xl focus:mx-3 focus:text-xl active:mx-3 active:text-xl group-hover:mx-3 group-hover:text-xl focus-within:mx-3 focus-within:text-xl'
-		)
 	})
 
 	test('with other functions', () => {
@@ -52,6 +42,37 @@ describe('combine both', () => {
 	test('combine', () => {
 		const xl = screen('xl')
 		const hover = status('hover')
+		expect(xl(hover('mx-3', rounded(1), size(40)))).toBe(
+			'xl:hover:mx-3 xl:hover:rounded-1 xl:hover:w-40 xl:hover:h-40'
+		)
+	})
+})
+
+describe('nth child classes', () => {
+	test('default usage', () => {
+		expect(child('first', 'mx-3', 'text-xl')).toBe('first:mx-3 first:text-xl')
+		expect(child('last', 'mx-3', 'text-xl')).toBe('last:mx-3 last:text-xl')
+		expect(child('odd', 'mx-3', 'text-xl')).toBe('odd:mx-3 odd:text-xl')
+		expect(child('even', 'mx-3', 'text-xl')).toBe('even:mx-3 even:text-xl')
+	})
+
+	test('with currying', () => {
+		const first = child('first')
+		expect(first('mx-3', 'text-xl')).toBe('first:mx-3 first:text-xl')
+	})
+
+	test('with other functions', () => {
+		const first = child('first')
+		expect(first('mx-3', rounded(1), size(40))).toBe(
+			'first:mx-3 first:rounded-1 first:w-40 first:h-40'
+		)
+	})
+})
+
+describe('combine screen and status prefix', () => {
+	test('combine', () => {
+		const xl = screen('xl')
+		const hover = child('hover')
 		expect(xl(hover('mx-3', rounded(1), size(40)))).toBe(
 			'xl:hover:mx-3 xl:hover:rounded-1 xl:hover:w-40 xl:hover:h-40'
 		)

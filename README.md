@@ -1,6 +1,6 @@
 # Tailwind Shortcuts <!-- omit in toc -->
 
-[![NPM version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.0.7&x2=0)](https://www.npmjs.com/package/tailwindcss-shortcuts)
+[![NPM version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.1.0&x2=0)](https://www.npmjs.com/package/tailwindcss-shortcuts)
 [![Node version](https://img.shields.io/badge/node-%3E=%2011.0.0-brightgreen.svg)]()
 
 Use functions to generate tailwindcss classes.
@@ -45,6 +45,7 @@ npm i tailwind-shortcuts
 - [Prefix](#prefix)
 	- [Screen](#screen)
 	- [Dom Status](#dom-status)
+	- [Nth-child](#nth-child)
 - [Extra](#extra)
 	- [Custom](#custom)
 	- [Reset](#reset)
@@ -664,7 +665,7 @@ status(variant, ...classes)
 // Currying
 status(variant)(...classes)
 ```
-Variants: 'all', 'hover', 'focus', 'active', 'group-hover', 'focus-within'
+Variants: 'hover', 'focus', 'active', 'group-hover', 'focus-within', 'disabled', 'visited'
 
 Tailwind Classes
 - [Configuring Variants](https://tailwindcss.com/docs/configuring-variants)
@@ -684,11 +685,31 @@ hover('w-320', 'mx-16', 'text-xl')
 // Become: 'hover:w-320 hover:mx-16 hover:text-xl'
 ```
 
-**Special keyword: `all`**
+### Nth-child
+```typescript
+child(variant, ...classes)
+
+// Currying
+child(variant)(...classes)
+```
+Variants: 'first', 'last', 'odd', 'even'
+
+Tailwind Classes
+- [Configuring Variants](https://tailwindcss.com/docs/configuring-variants)
 
 ```js
-status('all', 'm-16')
-// Become: 'hover:m-16 focus:m-16 active:m-16 group-hover:m-16 focus-within:m-16'
+import { child } from 'tailwind-shortcuts'
+
+// Or
+import { child } from 'tailwind-shortcuts/prefix'
+
+child('first', 'w-320', 'mx-16', 'text-xl')
+// Become: 'first:w-320 first:mx-16 first:text-xl'
+
+// Currying
+const first = child('first')
+first('w-320', 'mx-16', 'text-xl')
+// Become: 'first:w-320 first:mx-16 first:text-xl'
 ```
 
 ## Extra

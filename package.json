@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-shortcuts",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Generate tailwind class names by js function",
   "main": "index.js",
   "scripts": {
