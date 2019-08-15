@@ -1,7 +1,7 @@
 import { Currying } from './_utils/types'
 
 const addPrefix = (prefix: string, classes: string[]): string =>
-	`${prefix}:${classes.join(' ').replace(/\s([a-zA-Z])/g, ` ${prefix}:$1`)}`
+	`${prefix}:${classes.join(' ').replace(/\s([a-zA-Z\-])/g, ` ${prefix}:$1`)}`
 
 export const screen = (
 	variant: string,
@@ -9,7 +9,7 @@ export const screen = (
 ): string | Currying =>
 	classes.length
 		? addPrefix(variant, classes)
-		: (...classes: string[]) => addPrefix(variant, classes)
+		: (...classes: string[]): string => addPrefix(variant, classes)
 
 type Status =
 	| 'hover'
@@ -26,7 +26,7 @@ export const status = (
 ): string | Currying =>
 	classes.length
 		? addPrefix(variant, classes)
-		: (...classes: string[]) => addPrefix(variant, classes)
+		: (...classes: string[]): string => addPrefix(variant, classes)
 
 type Child = 'first' | 'last' | 'odd' | 'even'
 
@@ -36,4 +36,4 @@ export const child = (
 ): string | Currying =>
 	classes.length
 		? addPrefix(variant, classes)
-		: (...classes: string[]) => addPrefix(variant, classes)
+		: (...classes: string[]): string => addPrefix(variant, classes)

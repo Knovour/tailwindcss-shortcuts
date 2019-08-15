@@ -6,6 +6,9 @@ describe('screen classes', () => {
 	test('default usage', () =>
 		expect(screen('md', 'mx-3', 'text-xl')).toBe('md:mx-3 md:text-xl'))
 
+	test('with negative value', () =>
+		expect(screen('md', '-mx-3', '-shadow-sm')).toBe('md:-mx-3 md:-shadow-sm'))
+
 	test('with currying', () => {
 		const md = screen('md')
 		expect(md('mx-3', 'text-xl')).toBe('md:mx-3 md:text-xl')
@@ -24,6 +27,11 @@ describe('status classes', () => {
 		expect(status('hover', 'mx-3', 'text-xl')).toBe('hover:mx-3 hover:text-xl')
 		expect(status('focus', 'mx-3', 'text-xl')).toBe('focus:mx-3 focus:text-xl')
 	})
+
+	test('with negative value', () =>
+		expect(status('hover', '-mx-3', '-shadow-sm')).toBe(
+			'hover:-mx-3 hover:-shadow-sm'
+		))
 
 	test('with currying', () => {
 		const hover = status('hover')
@@ -55,6 +63,11 @@ describe('nth child classes', () => {
 		expect(child('odd', 'mx-3', 'text-xl')).toBe('odd:mx-3 odd:text-xl')
 		expect(child('even', 'mx-3', 'text-xl')).toBe('even:mx-3 even:text-xl')
 	})
+
+	test('with negative value', () =>
+		expect(child('first', '-mx-3', '-shadow-sm')).toBe(
+			'first:-mx-3 first:-shadow-sm'
+		))
 
 	test('with currying', () => {
 		const first = child('first')

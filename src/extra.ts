@@ -7,7 +7,8 @@ export const custom = (
 ): string | Currying =>
 	args.length
 		? format(toClassList(create(className), args))
-		: (...args: Argument[]) => format(toClassList(create(className), args))
+		: (...args: Argument[]): string =>
+				format(toClassList(create(className), args))
 
 type Elem = 'a' | 'input' | 'button'
 
