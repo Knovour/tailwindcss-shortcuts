@@ -1,4 +1,4 @@
-# Tailwind Shortcuts <!-- omit in toc -->
+# Tailwindcss Shortcuts <!-- omit in toc -->
 
 [![NPM version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.1.0&x2=0)](https://www.npmjs.com/package/tailwindcss-shortcuts)
 [![Node version](https://img.shields.io/badge/node-%3E=%2011.0.0-brightgreen.svg)]()
