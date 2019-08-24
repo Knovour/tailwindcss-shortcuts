@@ -32,3 +32,11 @@ export const place = (...args: Argument[]): string => {
 			.join(' ')
 	)
 }
+
+const pos = (position: string, args: Argument[]): string =>
+	`${position} ${place(...args)}`
+
+export const absolute = (...args: Argument[]): string => pos('absolute', args)
+export const relative = (...args: Argument[]): string => pos('relative', args)
+export const fixed = (...args: Argument[]): string => pos('fixed', args)
+export const sticky = (...args: Argument[]): string => pos('sticky', args)

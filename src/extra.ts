@@ -1,14 +1,10 @@
-import { create, format, toClassList } from './_utils/helpers'
-import { Argument, Currying } from './_utils/types'
+import { create, format, toClassList, curry2 } from './_utils/helpers'
+import { Argument } from './_utils/types'
 
-export const custom = (
-	className: string = '',
-	...args: Argument[]
-): string | Currying =>
-	args.length
-		? format(toClassList(create(className), args))
-		: (...args: Argument[]): string =>
-				format(toClassList(create(className), args))
+export const custom = curry2(
+	(className: string = '', args: Argument[]): string =>
+		format(toClassList(create(className), args))
+)
 
 type Elem = 'a' | 'input' | 'button'
 

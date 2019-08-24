@@ -1,4 +1,12 @@
-import { object, overflow, place } from '../dist/layout'
+import {
+	object,
+	overflow,
+	place,
+	absolute,
+	relative,
+	fixed,
+	sticky,
+} from '../dist/layout'
 
 describe('object img classes', () => {
 	test('default usage', () => {
@@ -57,4 +65,11 @@ describe('position placement classes', () => {
 
 	test('with complex attributes', () =>
 		expect(place(1, undefined, 'auto', -4)).toBe('top-1 bottom-auto -left-4'))
+
+	test('with specific position', () => {
+		expect(absolute(1, 2, 3, 4)).toBe('absolute top-1 right-2 bottom-3 left-4')
+		expect(relative(1, 2, 3, 4)).toBe('relative top-1 right-2 bottom-3 left-4')
+		expect(fixed(1, 2, 3, 4)).toBe('fixed top-1 right-2 bottom-3 left-4')
+		expect(sticky(1, 2, 3, 4)).toBe('sticky top-1 right-2 bottom-3 left-4')
+	})
 })

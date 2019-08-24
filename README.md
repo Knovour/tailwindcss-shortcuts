@@ -30,6 +30,7 @@ npm i tailwind-shortcuts
 	- [Object](#object)
 	- [Overflow](#overflow)
 	- [Place](#place)
+	- [Position](#position)
 - [Sizing](#sizing)
 	- [Size](#size)
 	- [Max Size](#max-size)
@@ -373,6 +374,39 @@ place(0, 1, 2, 3)
 
 place(0, -1, 2, -3)
 // Become: 'top-0 -right-1 bottom-2 -left-3'
+```
+
+### Position
+
+Same usage as [Place](#place)
+
+```typescript
+absolute(top = 'auto', right, bottom, left)
+relative(top = 'auto', right, bottom, left)
+fixed(top = 'auto', right, bottom, left)
+sticky(top = 'auto', right, bottom, left)
+```
+
+Tailwind Classes
+- [Top / Right / Bottom / Left](https://tailwindcss.com/docs/top-right-bottop-left)
+
+```js
+import { absolute, relative, fixed, sticky } from 'tailwind-shortcuts'
+
+// Or
+import { absolute, relative, fixed, sticky } from 'tailwind-shortcuts/layout'
+
+absolute()
+// Become: 'absolute inset-auto'
+
+relative(0)
+// Become: 'relative inset-0'
+
+fixed(0, 1)
+// Become: 'fixed inset-y-0 inset-x-1'
+
+sticky(0, 1, 2)
+// Become: 'sticky top-0 inset-x-1 bottom-2'
 ```
 
 ## Sizing

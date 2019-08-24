@@ -1,4 +1,4 @@
-import { screen, status, child } from '../dist/prefix'
+import { screen, responsive, status, child } from '../dist/prefix'
 import { rounded } from '../dist/borders'
 import { size } from '../dist/sizing'
 
@@ -18,6 +18,22 @@ describe('screen classes', () => {
 		const xl = screen('xl')
 		expect(xl('mx-3', rounded(1), size(40))).toBe(
 			'xl:mx-3 xl:rounded-1 xl:w-40 xl:h-40'
+		)
+	})
+})
+
+describe('responsive classes', () => {
+	test('default usage', () =>
+		expect(responsive({ md: 'mx-3 text-xl' })).toBe('md:mx-3 md:text-xl'))
+
+	test('with negative value', () =>
+		expect(responsive({ md: '-mx-3 -shadow-sm' })).toBe(
+			'md:-mx-3 md:-shadow-sm'
+		))
+
+	test('with multiple size', () => {
+		expect(responsive({ md: 'mx-3 text-xl', lg: '-mx-3 -shadow-sm' })).toBe(
+			'md:mx-3 md:text-xl lg:-mx-3 lg:-shadow-sm'
 		)
 	})
 })

@@ -22,5 +22,9 @@ const place = (...args) => {
         .map((target, idx) => create(target)(args[idx]))
         .join(' '));
 };
+const absolute = (...args) => `absolute ${place(...args)}`;
+const relative = (...args) => `relative ${place(...args)}`;
+const fixed = (...args) => `fixed ${place(...args)}`;
+const sticky = (...args) => `sticky ${place(...args)}`;
 
-export { object, overflow, place };
+export { absolute, fixed, object, overflow, place, relative, sticky };
