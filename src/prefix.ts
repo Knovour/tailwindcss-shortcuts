@@ -7,6 +7,11 @@ export const screen = curry2((variant: string, classes: string[]): string =>
 	addPrefix(variant, classes)
 )
 
+export const responsive = (mediaGroup: { [key: string]: string }): string =>
+	Object.keys(mediaGroup)
+		.map(key => addPrefix(key, [mediaGroup[key]]))
+		.join(' ')
+
 type Status =
 	| 'hover'
 	| 'focus'

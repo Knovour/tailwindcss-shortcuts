@@ -1,6 +1,6 @@
 # Tailwindcss Shortcuts <!-- omit in toc -->
 
-[![NPM version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.1.2&x2=0)](https://www.npmjs.com/package/tailwindcss-shortcuts)
+[![NPM version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.2.0&x2=0)](https://www.npmjs.com/package/tailwindcss-shortcuts)
 [![Node version](https://img.shields.io/badge/node-%3E=%2011.0.0-brightgreen.svg)]()
 
 Use functions to generate tailwindcss classes.
@@ -44,6 +44,7 @@ npm i tailwind-shortcuts
 	- [Text](#text)
 - [Prefix](#prefix)
 	- [Screen](#screen)
+	- [Responsive](#responsive)
 	- [Dom Status](#dom-status)
 	- [Nth-child](#nth-child)
 - [Extra](#extra)
@@ -656,6 +657,29 @@ screen('md', 'w-320', 'mx-16', 'text-xl')
 const md = screen('md')
 md('w-320', 'mx-16', 'text-xl')
 // Become: 'md:w-320 md:mx-16 md:text-xl'
+```
+
+### Responsive
+
+```typescript
+responsive(breakpointObject, ...classes)
+```
+
+Tailwind Classes
+- [Breakpoints](https://tailwindcss.com/docs/breakpoints)
+
+
+```js
+import { responsive } from 'tailwind-shortcuts'
+
+// Or
+import { responsive } from 'tailwind-shortcuts/prefix'
+
+responsive({
+	md: 'w-320 mx-16 text-xl'
+	lg: 'w-640 mx-32 text-2xl'
+})
+// Become: 'md:w-320 md:mx-16 md:text-xl lg:w-640 lg:mx-32 lg:text-2xl'
 ```
 
 ### Dom Status

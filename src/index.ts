@@ -2,7 +2,7 @@ import { border, borderWidth, rounded, roundedX, roundedY } from './borders'
 import { custom, reset } from './extra'
 import { flex, flexItem } from './flexbox'
 import { object, overflow, place } from './layout'
-import { screen, status, child } from './prefix'
+import { screen, responsive, status, child } from './prefix'
 import { margin, padding } from './spacing'
 import { size, maxSize, minSize } from './sizing'
 import { font, list, text } from './typo'
@@ -23,6 +23,7 @@ export {
 	overflow,
 	place,
 	screen,
+	responsive,
 	status,
 	child,
 	size,
