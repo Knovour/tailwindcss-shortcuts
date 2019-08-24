@@ -16,3 +16,8 @@ export const toClassList = (
 	createClass: (arg: Argument) => string,
 	args: Argument[]
 ): string => args.map(arg => createClass(arg)).join(' ')
+
+export const curry2 = (
+	fn: (currentName: string, currentArgs: Argument[]) => string
+): ((variant: string, ...args: Argument[]) => any) => (variant, ...args) =>
+	args.length ? fn(variant, args) : (...args: Argument[]) => fn(variant, args)

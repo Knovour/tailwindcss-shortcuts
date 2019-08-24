@@ -8,5 +8,6 @@ const format = (classes) => classes
     .replace(/ +/g, ' ')
     .trim();
 const toClassList = (createClass, args) => args.map(arg => createClass(arg)).join(' ');
+const curry2 = (fn) => (variant, ...args) => args.length ? fn(variant, args) : (...args) => fn(variant, args);
 
-export { create as c, format as f, toClassList as t };
+export { curry2 as a, create as c, format as f, toClassList as t };

@@ -1,7 +1,3 @@
-import { Currying } from './_utils/types';
-export declare const screen: (variant: string, ...classes: string[]) => string | Currying;
-declare type Status = 'hover' | 'focus' | 'active' | 'group-hover' | 'focus-within' | 'disabled' | 'visited';
-export declare const status: (variant: Status, ...classes: string[]) => string | Currying;
-declare type Child = 'first' | 'last' | 'odd' | 'even';
-export declare const child: (variant: Child, ...classes: string[]) => string | Currying;
-export {};
+export declare const screen: (variant: string, ...args: import("./_utils/types").Argument[]) => any;
+export declare const status: (variant: string, ...args: import("./_utils/types").Argument[]) => any;
+export declare const child: (variant: string, ...args: import("./_utils/types").Argument[]) => any;

@@ -1,33 +1,33 @@
 {
   "name": "tailwindcss-shortcuts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate tailwind class names by js function",
   "main": "index.js",
   "scripts": {
     "build": "rm -r ./dist; rollup -c",
     "test": "jest --verbose",
-		"copypackage": "cp -rf package.json dist; cp -rf package-lock.json dist; cp -rf README.md dist; cp -rf tsconfig.json dist",
-		"dist": "npm run copypackage; cd dist; npm publish"
+    "copypackage": "cp -rf package.json dist; cp -rf package-lock.json dist; cp -rf README.md dist; cp -rf tsconfig.json dist",
+    "dist": "npm run copypackage; cd dist; npm publish"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "babel-jest": "^24.8.0",
-    "jest": "^24.8.0",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
     "prettier": "^1.18.2",
-    "rollup": "^1.19.3",
-    "rollup-plugin-typescript2": "^0.22.1",
-    "tslint": "^5.18.0",
+    "rollup": "^1.20.1",
+    "rollup-plugin-typescript2": "^0.23.0",
+    "tslint": "^5.19.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-loader": "^3.5.4",
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.3"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Knovour/tailwindcss-shortcuts"
-	},
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Knovour/tailwindcss-shortcuts"
+  },
   "author": "Knovour",
   "license": "MIT"
 }
