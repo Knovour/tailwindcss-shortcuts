@@ -1,9 +1,8 @@
 import { create, format, toClassList, curry2 } from './_utils/helpers'
-import { Argument } from './_utils/types'
+import { Arg } from './_utils/types'
 
-export const custom = curry2(
-	(className: string = '', args: Argument[]): string =>
-		format(toClassList(create(className), args))
+export const custom = curry2((className: string = '', args: Arg[]): string =>
+	format(toClassList(create(className), args))
 )
 
 type Elem = 'a' | 'input' | 'button'

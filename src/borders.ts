@@ -1,7 +1,7 @@
 import { create, format } from './_utils/helpers'
-import { Argument } from './_utils/types'
+import { Arg } from './_utils/types'
 
-const generate = (className: string, args: Argument[]) => {
+const generate = (className: string, args: Arg[]) => {
 	switch (args.length) {
 		case 0:
 			return className
@@ -22,11 +22,10 @@ const generate = (className: string, args: Argument[]) => {
 	}
 }
 
-export const borderWidth = (...args: Argument[]): string =>
-	generate('border', args)
+export const borderWidth = (...args: Arg[]): string => generate('border', args)
 
 export const border = (
-	w: Argument | Argument[] = 'default',
+	w: Arg | Arg[] = 'default',
 	style?: string,
 	color?: string
 ): string => {
@@ -36,11 +35,10 @@ export const border = (
 	)
 }
 
-export const rounded = (...args: Argument[]): string =>
-	generate('rounded', args)
+export const rounded = (...args: Arg[]): string => generate('rounded', args)
 
-export const roundedX = (r: Argument = 'default', l: Argument = r): string =>
+export const roundedX = (r: Arg = 'default', l: Arg = r): string =>
 	format(`${create('rounded-r')(r)} ${create('rounded-l')(l)}`)
 
-export const roundedY = (t: Argument = 'default', b: Argument = t): string =>
+export const roundedY = (t: Arg = 'default', b: Arg = t): string =>
 	format(`${create('rounded-t')(t)} ${create('rounded-b')(b)}`)

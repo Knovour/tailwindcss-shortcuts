@@ -1,7 +1,7 @@
 import { create, format } from './_utils/helpers'
-import { Argument } from './_utils/types'
+import { Arg } from './_utils/types'
 
-const spacing = (type: string, args: Argument[]): string => {
+const spacing = (type: string, args: Arg[]): string => {
 	if (!args.length) return type === 'm' ? 'm-auto' : 'p-0'
 
 	const targets = [[''], ['y', 'x'], ['t', 'x', 'b'], ['t', 'r', 'b', 'l']]
@@ -13,5 +13,5 @@ const spacing = (type: string, args: Argument[]): string => {
 	)
 }
 
-export const margin = (...args: Argument[]): string => spacing('m', args)
-export const padding = (...args: Argument[]): string => spacing('p', args)
+export const margin = (...args: Arg[]): string => spacing('m', args)
+export const padding = (...args: Arg[]): string => spacing('p', args)

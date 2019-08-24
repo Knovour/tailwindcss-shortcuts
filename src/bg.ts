@@ -1,7 +1,7 @@
 import { create, format, toClassList } from './_utils/helpers'
-import { Argument } from './_utils/types'
+import { Arg } from './_utils/types'
 
-export default (...args: Argument[]): string =>
+export default (...args: Arg[]): string =>
 	format(
 		toClassList(create('bg'), args).replace(
 			'bg-full-cover',

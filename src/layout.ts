@@ -1,5 +1,5 @@
 import { create, format, toClassList } from './_utils/helpers'
-import { Argument } from './_utils/types'
+import { Arg } from './_utils/types'
 
 export const object = (...args: string[]): string =>
 	format(toClassList(create('object'), args))
@@ -16,7 +16,7 @@ export const overflow = (yOrAll: Overflow = 'auto', x?: Overflow): string => {
 		: `${create('overflow-y')(oY)} ${create('overflow-x')(oX)}`.trim()
 }
 
-export const place = (...args: Argument[]): string => {
+export const place = (...args: Arg[]): string => {
 	if (!args.length) return 'inset-auto'
 
 	const directions = [
@@ -33,10 +33,7 @@ export const place = (...args: Argument[]): string => {
 	)
 }
 
-const pos = (position: string, args: Argument[]): string =>
-	`${position} ${place(...args)}`
-
-export const absolute = (...args: Argument[]): string => pos('absolute', args)
-export const relative = (...args: Argument[]): string => pos('relative', args)
-export const fixed = (...args: Argument[]): string => pos('fixed', args)
-export const sticky = (...args: Argument[]): string => pos('sticky', args)
+export const absolute = (...args: Arg[]): string => `absolute ${place(...args)}`
+export const relative = (...args: Arg[]): string => `relative ${place(...args)}`
+export const fixed = (...args: Arg[]): string => `fixed ${place(...args)}`
+export const sticky = (...args: Arg[]): string => `sticky ${place(...args)}`
