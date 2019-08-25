@@ -2,6 +2,8 @@ import { border, borderWidth } from '../dist/borders'
 
 describe('borders classes', () => {
 	test('default usage', () => {
+		expect(border()).toBe('border')
+
 		expect(border('default', 'solid', 'black')).toBe(
 			'border border-solid border-black'
 		)
@@ -30,9 +32,9 @@ describe('borders classes', () => {
 	})
 
 	test('with empty attribute', () => {
-		expect(border([''], '', 'white')).toBe('border border-white')
-		expect(border('', '', 'white')).toBe('border border-white')
-		expect(border(undefined, undefined, 'white')).toBe('border border-white')
+		expect(border([''], '', 'white')).toBe('border-white')
+		expect(border('', '', 'white')).toBe('border-white')
+		expect(border(undefined, undefined, 'white')).toBe('border-white')
 	})
 
 	test('combined', () => {
@@ -45,7 +47,7 @@ describe('borders classes', () => {
 describe('border width classes', () => {
 	test('default usage', () => {
 		expect(borderWidth()).toBe('border')
-		expect(borderWidth('')).toBe('border')
+		expect(borderWidth('')).toBe('')
 		expect(borderWidth('default')).toBe('border')
 		expect(borderWidth(1)).toBe('border-1')
 	})

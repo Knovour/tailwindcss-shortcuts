@@ -27,7 +27,7 @@ describe('object img classes', () => {
 
 describe('overflow classes', () => {
 	test('default usage', () => {
-		expect(overflow()).toBe('overflow-auto')
+		expect(overflow()).toBe('')
 		expect(overflow('scroll')).toBe('overflow-scroll')
 	})
 
@@ -48,7 +48,7 @@ describe('overflow classes', () => {
 
 describe('position placement classes', () => {
 	test('default usage', () => {
-		expect(place()).toBe('inset-auto')
+		expect(place()).toBe('')
 		expect(place(0)).toBe('inset-0')
 	})
 

@@ -41,14 +41,5 @@ const items = [
 
 type FlexItem = typeof items[number]
 
-export const flexItem = (
-	defaultVal: FlexItem = 'initial',
-	...args: FlexItem[]
-): string => {
-	return format(
-		toClassList(
-			create('flex'),
-			[defaultVal, ...args].filter(arg => items.includes(arg))
-		)
-	)
-}
+export const flexItem = (...args: FlexItem[]): string =>
+	format(toClassList(create('flex'), args.filter(arg => items.includes(arg))))

@@ -7,7 +7,7 @@ export const object = (...args: string[]): string =>
 const overflowType = ['auto', 'hidden', 'visible', 'scroll'] as const
 type Overflow = typeof overflowType[number]
 
-export const overflow = (yOrAll: Overflow = 'auto', x?: Overflow): string => {
+export const overflow = (yOrAll: Overflow, x?: Overflow): string => {
 	const oY = overflowType.includes(yOrAll) ? yOrAll : ''
 	const oX = x && overflowType.includes(x) ? x : ''
 
@@ -17,7 +17,7 @@ export const overflow = (yOrAll: Overflow = 'auto', x?: Overflow): string => {
 }
 
 export const place = (...args: Arg[]): string => {
-	if (!args.length) return 'inset-auto'
+	if (!args.length) return ''
 
 	const directions = [
 		['inset'],

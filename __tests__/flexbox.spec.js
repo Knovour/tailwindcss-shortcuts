@@ -23,9 +23,7 @@ describe('flexbox classes', () => {
 })
 
 describe('flexbox item classes', () => {
-	test('default usage', () => {
-		expect(flexItem()).toBe('flex-initial')
-	})
+	test('default usage', () => expect(flexItem()).toBe(''))
 
 	test('with attributes', () => {
 		expect(flexItem('grow', 'shrink-0')).toBe('flex-grow flex-shrink-0')

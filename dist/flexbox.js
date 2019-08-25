@@ -29,8 +29,6 @@ const items = [
     'shrink',
     'shrink-0',
 ];
-const flexItem = (defaultVal = 'initial', ...args) => {
-    return format(toClassList(create('flex'), [defaultVal, ...args].filter(arg => items.includes(arg))));
-};
+const flexItem = (...args) => format(toClassList(create('flex'), args.filter(arg => items.includes(arg))));
 
 export { flex, flexItem };

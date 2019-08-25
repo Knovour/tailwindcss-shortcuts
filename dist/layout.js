@@ -2,7 +2,7 @@ import { f as format, t as toClassList, c as create } from './_helpers.js';
 
 const object = (...args) => format(toClassList(create('object'), args));
 const overflowType = ['auto', 'hidden', 'visible', 'scroll'];
-const overflow = (yOrAll = 'auto', x) => {
+const overflow = (yOrAll, x) => {
     const oY = overflowType.includes(yOrAll) ? yOrAll : '';
     const oX = x && overflowType.includes(x) ? x : '';
     return !x
@@ -11,7 +11,7 @@ const overflow = (yOrAll = 'auto', x) => {
 };
 const place = (...args) => {
     if (!args.length)
-        return 'inset-auto';
+        return '';
     const directions = [
         ['inset'],
         ['inset-y', 'inset-x'],

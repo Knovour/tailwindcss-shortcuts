@@ -2,7 +2,7 @@ import { create, format } from './_utils/helpers'
 import { Arg } from './_utils/types'
 
 const spacing = (type: string, args: Arg[]): string => {
-	if (!args.length) return type === 'm' ? 'm-auto' : 'p-0'
+	if (!args.length) return ''
 
 	const targets = [[''], ['y', 'x'], ['t', 'x', 'b'], ['t', 'r', 'b', 'l']]
 

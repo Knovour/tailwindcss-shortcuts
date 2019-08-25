@@ -6,8 +6,8 @@ const generate = (className: string, args: Arg[]) => {
 		case 0:
 			return className
 		case 1:
-			const all = args[0]
-			return format(create(className)(!all && all !== 0 ? 'default' : all))
+			const [all] = args
+			return !all && all !== 0 ? '' : format(create(className)(all))
 		default:
 			const [p1, p2, p3 = p1, p4 = p2] = args
 			const currents = [p1, p2, p3, p4]
@@ -25,20 +25,24 @@ const generate = (className: string, args: Arg[]) => {
 export const borderWidth = (...args: Arg[]): string => generate('border', args)
 
 export const border = (
-	w: Arg | Arg[] = 'default',
+	w: Arg | Arg[],
 	style?: string,
 	color?: string
 ): string => {
 	const border = create('border')
-	return format(
-		`${borderWidth(...[w].flat())} ${border(style)} ${border(color)}`
+	return (
+		format(`${borderWidth(...[w].flat())} ${border(style)} ${border(color)}`) ||
+		'border'
 	)
 }
 
-export const rounded = (...args: Arg[]): string => generate('rounded', args)
+export const rounded = (...args: Arg[]): string =>
+	args.length ? generate('rounded', args) : 'rounded'
 
-export const roundedX = (r: Arg = 'default', l: Arg = r): string =>
-	format(`${create('rounded-r')(r)} ${create('rounded-l')(l)}`)
+export const roundedX = (r: Arg, l: Arg = r): string =>
+	format(`${create('rounded-r')(r)} ${create('rounded-l')(l)}`) ||
+	'rounded-r rounded-l'
 
-export const roundedY = (t: Arg = 'default', b: Arg = t): string =>
-	format(`${create('rounded-t')(t)} ${create('rounded-b')(b)}`)
+export const roundedY = (t: Arg, b: Arg = t): string =>
+	format(`${create('rounded-t')(t)} ${create('rounded-b')(b)}`) ||
+	'rounded-t rounded-b'

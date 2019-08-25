@@ -1,6 +1,6 @@
 # Tailwindcss Shortcuts <!-- omit in toc -->
 
-[![NPM version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.3.0&x2=0)](https://www.npmjs.com/package/tailwindcss-shortcuts)
+[![NPM version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.3.1&x2=0)](https://www.npmjs.com/package/tailwindcss-shortcuts)
 [![Node version](https://img.shields.io/badge/node-%3E=%2011.0.0-brightgreen.svg)]()
 
 Use functions to generate tailwindcss classes.
@@ -86,7 +86,7 @@ bg('full-cover') // Become: bg-cover bg-no-repeat bg-center
 ### Border
 
 ```typescript
-border(width: (string | number)[] = 'default', style?: string, color?: string)
+border(width: (string | number)[], style?: string, color?: string)
 ```
 
 Check [Border Width](#border-width) for more info.
@@ -102,7 +102,10 @@ import { border } from 'tailwind-shortcuts'
 // Or
 import { border } from 'tailwind-shortcuts/border'
 
-border(undefined, 'solid', 'black')
+border()
+// Become: 'border'
+
+border('default', 'solid', 'black')
 // Become: 'border border-solid border-black'
 
 border(1, 'solid', 'black')
@@ -115,7 +118,7 @@ border([1, 2], 'solid', 'black')
 ### Border Width
 
 ```typescript
-border(top = 'default', right, bottom, left)
+border(top, right, bottom, left)
 ```
 Simliar to `border-width` css
 
@@ -151,7 +154,7 @@ borderWidth(1, 2, 3, 4)
 ### Rounded
 
 ```typescript
-rounded(topLeft = 'default', topRight, bottomRight, bottomLeft)
+rounded(topLeft, topRight, bottomRight, bottomLeft)
 ```
 Simliar to `border-radius` css
 
@@ -187,7 +190,7 @@ rounded(1, 2, 3, 4)
 
 ### Rounded X
 ```typescript
-roundedY(top = 'default', bottom)
+roundedY(top, bottom)
 ```
 
 Tailwind Classes
@@ -213,7 +216,7 @@ roundedX(1, 2)
 
 ### Rounded Y
 ```typescript
-roundedY(left = 'default', right)
+roundedY(left, right)
 ```
 
 Tailwind Classes
@@ -278,7 +281,7 @@ flex('middle')
 ```typescript
 flexItem(...attributes)
 ```
-Attributes: `initial` (default), `1`, `auto`, `none`, `grow`, `grow-0`, `shrink`, `shrink-0`
+Attributes: `initial`, `1`, `auto`, `none`, `grow`, `grow-0`, `shrink`, `shrink-0`
 
 Tailwind Classes
 - [Flex](https://tailwindcss.com/docs/flex)
@@ -290,9 +293,6 @@ import { flexItem } from 'tailwind-shortcuts'
 
 // Or
 import { flexItem } from 'tailwind-shortcuts/flexbox'
-
-flexItem()
-// Become: 'flex-initial'
 
 flexItem('grow', 'shrink-0')
 // Become: 'flex-grow flex-shrink-0'
@@ -321,7 +321,7 @@ object('cover', 'center')
 
 ### Overflow
 ```typescript
-overflow(y = 'auto', x)
+overflow(y, x)
 ```
 
 Tailwind Classes
@@ -333,9 +333,6 @@ import { overflow } from 'tailwind-shortcuts'
 // Or
 import { overflow } from 'tailwind-shortcuts/layout'
 
-overflow()
-// Become: 'overflow-auto'
-
 overflow('scroll')
 // Become: 'overflow-scroll'
 
@@ -345,7 +342,7 @@ overflow('hidden', 'auto')
 
 ### Place
 ```typescript
-place(top = 'auto', right, bottom, left)
+place(top, right, bottom, left)
 ```
 
 Tailwind Classes
@@ -356,9 +353,6 @@ import { place } from 'tailwind-shortcuts'
 
 // Or
 import { place } from 'tailwind-shortcuts/layout'
-
-place()
-// Become: 'inset-auto'
 
 place(0)
 // Become: 'inset-0'
@@ -381,10 +375,10 @@ place(0, -1, 2, -3)
 Same usage as [Place](#place)
 
 ```typescript
-absolute(top = 'auto', right, bottom, left)
-relative(top = 'auto', right, bottom, left)
-fixed(top = 'auto', right, bottom, left)
-sticky(top = 'auto', right, bottom, left)
+absolute(top, right, bottom, left)
+relative(top, right, bottom, left)
+fixed(top, right, bottom, left)
+sticky(top, right, bottom, left)
 ```
 
 Tailwind Classes
@@ -396,7 +390,7 @@ import { absolute, relative, fixed, sticky } from 'tailwind-shortcuts'
 // Or
 import { absolute, relative, fixed, sticky } from 'tailwind-shortcuts/layout'
 
-absolute()
+absolute('auto')
 // Become: 'absolute inset-auto'
 
 relative(0)
@@ -413,7 +407,7 @@ sticky(0, 1, 2)
 
 ### Size
 ```typescript
-size(width = 'auto', height = width)
+size(width, height = width)
 ```
 
 Tailwind Classes
@@ -425,9 +419,6 @@ import { size } from 'tailwind-shortcuts'
 
 // Or
 import { size } from 'tailwind-shortcuts/sizing'
-
-size()
-// Become: 'w-auto h-auto'
 
 size(0)
 // Become: 'w-0 h-0'
@@ -441,7 +432,7 @@ size(24, '')
 
 ### Max Size
 ```typescript
-maxSize(width = 'auto', height = width)
+maxSize(width, height = width)
 ```
 
 Tailwind Classes
@@ -454,9 +445,6 @@ import { maxSize } from 'tailwind-shortcuts'
 // Or
 import { maxSize } from 'tailwind-shortcuts/sizing'
 
-maxSize()
-// Become: 'max-w-auto max-h-auto'
-
 maxSize(0)
 // Become: 'max-w-0 max-h-0'
 
@@ -466,7 +454,7 @@ maxSize(24, 32)
 
 ### Min Size
 ```typescript
-minSize(width = 'auto', height = width)
+minSize(width, height = width)
 ```
 
 Tailwind Classes
@@ -479,9 +467,6 @@ import { minSize } from 'tailwind-shortcuts'
 // Or
 import { minSize } from 'tailwind-shortcuts/sizing'
 
-minSize()
-// Become: 'min-w-auto min-h-auto'
-
 minSize(0)
 // Become: 'min-w-0 min-h-0'
 
@@ -493,7 +478,7 @@ minSize(24, 32)
 
 ### Margin
 ```typescript
-margin(top = 'auto', right, bottom, left)
+margin(top, right, bottom, left)
 ```
 
 Tailwind Classes
@@ -504,9 +489,6 @@ import { margin } from 'tailwind-shortcuts'
 
 // Or
 import { margin } from 'tailwind-shortcuts/spacing'
-
-margin()
-// Become: 'm-auto'
 
 margin(0)
 // Become: 'm-0'
@@ -526,7 +508,7 @@ margin(1, -2, 3, -4)
 
 ### Padding
 ```typescript
-padding(top = 0, right, bottom, left)
+padding(top, right, bottom, left)
 ```
 
 Tailwind Classes
@@ -537,9 +519,6 @@ import { padding } from 'tailwind-shortcuts'
 
 // Or
 import { padding } from 'tailwind-shortcuts/spacing'
-
-padding()
-// Become: 'p-0'
 
 padding(0)
 // Become: 'p-0'

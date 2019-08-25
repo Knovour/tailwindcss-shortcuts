@@ -2,7 +2,7 @@ import { size, maxSize, minSize } from '../dist/sizing'
 
 describe('width and height classes', () => {
 	test('default usage', () => {
-		expect(size()).toBe('w-auto h-auto')
+		expect(size()).toBe('')
 		expect(size(10)).toBe('w-10 h-10')
 	})
 
@@ -19,7 +19,7 @@ describe('width and height classes', () => {
 
 describe('max width and max height classes', () => {
 	test('default usage', () => {
-		expect(maxSize()).toBe('max-w-auto max-h-auto')
+		expect(maxSize()).toBe('')
 		expect(maxSize(10)).toBe('max-w-10 max-h-10')
 	})
 
@@ -36,7 +36,7 @@ describe('max width and max height classes', () => {
 
 describe('min width and min height classes', () => {
 	test('default usage', () => {
-		expect(minSize()).toBe('min-w-auto min-h-auto')
+		expect(minSize()).toBe('')
 		expect(minSize(10)).toBe('min-w-10 min-h-10')
 	})
 

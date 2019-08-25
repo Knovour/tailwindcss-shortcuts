@@ -2,7 +2,7 @@ import { margin, padding } from '../dist/spacing'
 
 describe('margin classes', () => {
 	test('default usage', () => {
-		expect(margin()).toBe('m-auto')
+		expect(margin()).toBe('')
 		expect(margin(8)).toBe('m-8')
 	})
 
@@ -24,7 +24,7 @@ describe('margin classes', () => {
 
 describe('padding classes', () => {
 	test('default usage', () => {
-		expect(padding()).toBe('p-0')
+		expect(padding()).toBe('')
 		expect(padding(8)).toBe('p-8')
 	})
 
