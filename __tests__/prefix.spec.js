@@ -1,4 +1,4 @@
-import { screen, responsive, status, child } from '../dist/prefix'
+import { screen, breakpoints, status, child } from '../dist/prefix'
 import { rounded } from '../dist/borders'
 import { size } from '../dist/sizing'
 
@@ -22,17 +22,17 @@ describe('screen classes', () => {
 	})
 })
 
-describe('responsive classes', () => {
+describe('breakpoints classes', () => {
 	test('default usage', () =>
-		expect(responsive({ md: 'mx-3 text-xl' })).toBe('md:mx-3 md:text-xl'))
+		expect(breakpoints({ md: 'mx-3 text-xl' })).toBe('md:mx-3 md:text-xl'))
 
 	test('with negative value', () =>
-		expect(responsive({ md: '-mx-3 -shadow-sm' })).toBe(
+		expect(breakpoints({ md: '-mx-3 -shadow-sm' })).toBe(
 			'md:-mx-3 md:-shadow-sm'
 		))
 
 	test('with multiple size', () => {
-		expect(responsive({ md: 'mx-3 text-xl', lg: '-mx-3 -shadow-sm' })).toBe(
+		expect(breakpoints({ md: 'mx-3 text-xl', lg: '-mx-3 -shadow-sm' })).toBe(
 			'md:mx-3 md:text-xl lg:-mx-3 lg:-shadow-sm'
 		)
 	})

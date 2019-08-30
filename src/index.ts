@@ -10,7 +10,7 @@ export {
 	fixed,
 	sticky,
 } from './layout'
-export { screen, responsive, status, child } from './prefix'
+export { screen, breakpoints, status, child } from './prefix'
 export { margin, padding } from './spacing'
 export { size, maxSize, minSize } from './sizing'
 export { font, list, text } from './typo'

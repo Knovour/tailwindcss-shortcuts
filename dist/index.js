@@ -3,7 +3,7 @@ export { border, borderWidth, rounded, roundedX, roundedY } from './borders.js';
 export { custom, reset } from './extra.js';
 export { flex, flexItem } from './flexbox.js';
 export { absolute, fixed, object, overflow, place, relative, sticky } from './layout.js';
-export { child, responsive, screen, status } from './prefix.js';
+export { breakpoints, child, screen, status } from './prefix.js';
 export { margin, padding } from './spacing.js';
 export { maxSize, minSize, size } from './sizing.js';
 export { font, list, text } from './typo.js';

@@ -1,5 +1,5 @@
 export declare const screen: (variant: string, ...args: import("./_utils/types").Arg[]) => any;
-export declare const responsive: (mediaGroup: {
+export declare const breakpoints: (mediaGroup: {
     [key: string]: string;
 }) => string;
 export declare const status: (variant: string, ...args: import("./_utils/types").Arg[]) => any;
